@@ -33,13 +33,33 @@ tbale, th, td{
         <td bgcolor="#000000">&nbsp;</td>
         <td align="center"><a href="Home.html"><h3 style="color:gold">Home</h3></a></td>
 	<td align="center"><a href="Myaccount.html"><h3 style="color:gold">My Account</h3></a></td>
-        <td align="center"><h3 style="color:gold">Page3</h3></td>
+        <td align="center"><a href="ContactUs.html"><h3 style="color:gold">Contact Us</h3></a></td>
 	<td align="center"><h3 style="color:gold">Page4</h3></td>
         <td bgcolor="#000000">&nbsp;</td>
     </tr>
     <tr height="900">
         <td bgcolor="#000000">&nbsp;</td>
-        <td colspan="4"> <img src="index.jpg" alt="Dog" class="center"> </td>
+        <td colspan="4"> 
+	<form action="Home.html"><!--This should link to a javascript page that redirects this data to the database, then go home. -->
+	<p align="middle">Login</p>
+		<p align="middle">
+	          <label>Text box</label>
+	          <input type = "text"
+                 id = "myText"
+                 value = "text here" />
+	        </p> 
+		<p align="middle">
+          <label>Password</label>
+          <input type = "password"
+                  id = "myPwd"
+                  value = "secret" />
+        	</p>
+		<p align="middle">
+		<input type="submit" value="Submit">
+		</p>
+		</form>
+	</td>
+ </td>
         <td bgcolor="#000000">&nbsp;</td>
     </tr>
     <tr height="100">

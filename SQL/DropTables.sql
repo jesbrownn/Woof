@@ -1,3 +1,5 @@
+drop procedure getMatches;
+drop procedure swipe;
 drop procedure modifyProfile;
 drop procedure createAccount;
 drop procedure getProfile;

@@ -55,4 +55,25 @@ BEGIN
     END IF;
 END//
 
+CREATE PROCEDURE swipe(IN swiper int, IN swiped int, IN swipedRight BOOL)
+BEGIN
+	IF swipedRight = 1 THEN
+		INSERT INTO RightSwipes
+        value (swiper, swiped);
+        IF EXISTS ( SELECT *
+			FROM RightSwipes
+			WHERE RightSwipes.swiper = swiped AND RightSwipes.swiped = swiper)
+		THEN
+			INSERT INTO Matches
+            value(swiper, swiped);
+		END IF;
+    END IF;
+END//
+
+CREATE PROCEDURE getMatches(IN acc int)
+BEGIN
+	SELECT *
+    FROM Matches
+    WHERE acc1=acc OR acc2=acc;
+END//
 delimiter ;

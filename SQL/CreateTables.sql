@@ -14,12 +14,14 @@ CREATE TABLE RightSwipes (
 	swiper int not null,
     swiped int not null,
     foreign key (swiper) references Accounts(accountNum),
-    foreign key (swiped) references Accounts(accountNum)
+    foreign key (swiped) references Accounts(accountNum),
+    UNIQUE KEY (swiper, swiped)
 );
 
 CREATE TABLE Matches(
 	acc1 int not null,
     acc2 int not null,
     foreign key (acc1) references Accounts(accountNum),
-    foreign key (acc2) references Accounts(accountNum)
+    foreign key (acc2) references Accounts(accountNum),
+    UNIQUE KEY(acc1, acc2)
 );

@@ -1,7 +1,7 @@
 CREATE TABLE Accounts (
 	accountNum int primary key auto_increment,
     token char(255) not null,
-    email varchar(40) not null,
+    email varchar(40) unique not null,
     pass char(255) not null,
     name varchar(40),
     breed varchar(40),

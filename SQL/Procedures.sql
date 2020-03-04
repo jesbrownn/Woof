@@ -22,8 +22,8 @@ END//
 
 CREATE PROCEDURE createAccount(IN tok char(255), IN email varchar(40), IN password char(255))
 BEGIN
-	INSERT INTO Accounts (token, email, pass)
-    value (tok, email, password);
+	INSERT IGNORE INTO Accounts (token, email, pass)
+	value (tok, email, password);
 END//
 
 CREATE PROCEDURE modifyProfile(IN acNum int, IN name varchar(40), IN breed varchar(40), IN bio varchar(500), IN age int, IN picture blob)

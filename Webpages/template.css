@@ -116,13 +116,19 @@ body {
   line-height: 80px;
   margin: 0;  
 }
-
+a:link{
+    text-decoration:none;
+    color:white;
+}
+a:visited{
+    text-decoration:none;
+    color:white;
+}
 @media (max-width: 500px) {
   .header h1 {
     font-size: 50px;
     line-height: 64px;
   }
-
   .main, .jumbotron {
     padding: 0 30px;
   }
@@ -130,4 +136,5 @@ body {
   .main img {
     width: 100%;
   }
+  
 }

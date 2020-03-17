@@ -1,70 +1,65 @@
-<!Doctype html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="website.css">
-<style>
-</style>
-</head>
-<body>
-<table>
-    <tr id="top">
-        <td>&nbsp;</td>
-        <td colspan="2">&nbsp;</td>
-	<td coldspan="1", id="CrAct"><a href="CreateAccount.html"><h3 id="goldtxt">New Account</h3></a></td>
-	<td id="textcell"><a href="Login.html"><h3 id="goldtxt">Login</h3></a></td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr id="banner">
-        <td id="border">&nbsp;</td>
-        <th colspan="4", align="center">Banner</th>
-        <td id="border">&nbsp;</td>
-    </tr>
-    <tr id="buttons">
-        <td id="border">&nbsp;</td>
-        <td id="textcell"><a href="StartupHome.html"><h3 id="goldtxt">Home</h3></a></td>
-	<td id="textcell"><a href="Login.html"><h3 id="goldtxt">My Account</h3></a></td>
-        <td id="textcell"><a href="Login.html"><h3 id="goldtxt">Chat</h3></a></td>
-	<td id="textcell"><h3 id="goldtxt">Match</h3></td>
-        <td id="border">&nbsp;</td>
-    </tr>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ 
+ <head>
+ <style>
+.match {
+border:1px solid black;
+height:400px;
+width:400px;
+margin: auto;
+display:inline-block;
+}
+
+ </style>
+    <meta charset="utf-8">
+    <title>Woof!</title>
+    <link rel="stylesheet" href="template.css" type="text/css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <h1>Woof!</h1>
+        <div class="text-background">
+          <p>Find your perfect doggie playdate</p>
+        </div>
+      </div>
+    </div>
+ <div class="nav createAcc">
+	<h1>Create Account</h1>
+ </div class = "loginbtns>
     <tr id="main">
         <td id="border">&nbsp;</td>
         <td colspan="4">
 		<form action="Home.html"><!--This should link to a javascript page that redirects this data to the database, then go home. -->
 
-					
-			<p id="loginbtns">Create New Account</p>		
-			<p id="loginbtns">
-		          <label>First Name</label>
+							
+			<p class="loginbtns">
+		          <label>First Name: </label>
 		          <input type = "text"
-        	         id = "FstName"
-        	         value = "text here" />
+        	         id = "FstName" />
 		        </p> 
-			<p id="loginbtns">
-		          <label>Last Name</label>
+			<p class="loginbtns">
+		          <label>Last Name:</label>
 		          <input type = "text"
-        	         id = "LstName"
-        	         value = "text here" />
+        	         id = "LstName" />
 		        </p> 
-			<p id="loginbtns">
-		          <label>Dogs Name</label>
+			<p class="loginbtns">
+		          <label>Dog's Name:</label>
 		          <input type = "text"
-        	         id = "DogName"
-        	         value = "text here" />
+        	         id = "DogName" />
 		        </p> 
-			<p id="loginbtns">
-		          <label>Username</label>
+			<p class="loginbtns">
+		          <label>Username:  </label>
 		          <input type = "text"
-        	         id = "myText"
-        	         value = "text here" />
+        	         id = "myText"/>
 		        </p> 
-			<p id="loginbtns">
-        	  <label>Password</label>
+			<p class="loginbtns">
+        	  <label>Password: </label>
         	  <input type = "password"
-        	          id = "myPwd"
-        	          value = "secret" />
+        	          id = "myPwd"/>
         		</p>
-			<p id="loginbtns">
+			<p class="loginbtns">
 <!--This should include a javascript image reciever by file upload. -->
 			<input type="submit" value="Submit">
 			</p>

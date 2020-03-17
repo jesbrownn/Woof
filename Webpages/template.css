@@ -138,3 +138,42 @@ a:visited{
   }
   
 }
+
+.nav, .createAcc{
+  color: #FFF;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  margin: 0 auto; 
+  line-height: 1.6;
+}
+
+.loginbtns{
+  width: 50%;
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 250px;
+  text-align: right;
+}
+
+.loginbtns input[type=text], input[type=password] {
+  display: inline-block;
+  text-align: left;
+  font-size: 17px;
+  width: 35%;
+  padding: 15px 30px;
+  border: none;
+  border-bottom: 2px solid #ff69b4;
+  outline: none;
+}
+
+.loginbtns input[type=submit]{
+  background-color: #000;
+  border: none;
+  color: white;
+  padding: 14px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}

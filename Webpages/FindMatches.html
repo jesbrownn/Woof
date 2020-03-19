@@ -3,12 +3,23 @@
  
  <head>
  <style>
-.match {
-border:1px solid black;
-height:400px;
-width:400px;
-margin: auto;
-display:inline-block;
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  height:400px;
+  width:33.33%;
+  float:left;
+  padding: 1px;
+}
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
  </style>
@@ -38,17 +49,24 @@ display:inline-block;
     </div>
 
     <div class="main">
-      <div class="container">
-        <img src="Leftpaw.png" alt="swipeleft" style="width:15%; display:inline;">
-	<div class="match">
-		<img src="Rightpaw.png" alt="swipeleft" style="width:25%;">
-		<p>Dog's Name</p>
-		<p>Breed</p>
-		<p>Bio</p>
+      
+<div class="row"> 
+<div class="column" style="width:23.33%">
 	</div>
-	<img src="Rightpaw.png" alt="swipeleft" style="width:15%; display:inline;float:right;">
-	</div>
-      </div>
+<div class="column" style="width:10%">
+    <img src="Leftpaw.png" alt="Snow" style="width:100%; height:250px;">
+	</div> 
+  <div class="column" style="width:33.33%; border:1px solid black;">
+    <img src="puppy.jpg" alt="Forest" style="width:50%">
+    <p>Name</p>
+    <p>Breed</p>
+    <p>Bio</p>
+  </div>
+  <div class="column" style="width:33.33%">
+    <img src="Rightpaw.png" alt="Mountains" style="width:30%; height:250px;">
+  </div>
+</div>
+
     </div>
 
     <div class="footer">

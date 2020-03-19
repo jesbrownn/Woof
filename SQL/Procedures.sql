@@ -76,4 +76,14 @@ BEGIN
     FROM Matches
     WHERE acc1=acc OR acc2=acc;
 END//
+
+CREATE FUNCTION login(e varchar(40), passw char(255))
+RETURNS tinyint(1)
+BEGIN
+	DECLARE val tinyint(1);
+	
+    SELECT EXISTS(SELECT * from Accounts where email = e AND pass = passw) into val;
+    RETURN val;
+END//
+
 delimiter ;

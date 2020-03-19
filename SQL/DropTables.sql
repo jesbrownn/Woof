@@ -1,3 +1,4 @@
+drop function login;
 drop procedure getMatches;
 drop procedure swipe;
 drop procedure modifyProfile;

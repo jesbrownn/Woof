@@ -9,6 +9,13 @@ body {
   font-weight: 100;
 }
 
+form {
+  text-align: center;
+  line-height: 30px;
+  height: 80%;
+  overflow: auto;
+}
+
 .container {
   margin: 0 auto;
   max-width: 940px; 
@@ -107,6 +114,7 @@ body {
   background: #000;
   height: 80px; 
   padding-bottom: 50px;
+  text-align: center;
 }
 
 .footer p { 
@@ -176,4 +184,8 @@ a:visited{
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.username, .user-pw {
+
 }

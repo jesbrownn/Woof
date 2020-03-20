@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
- 
-<?php
-  try{
-	$config = parse_ini_file("db.ini");  
-	$dbh = new PDO($config['dsn'],$config['username'], $config['password']);  
-
-	$dbh->query('CALL createAccount('$_POST['email']', '$_POST['password']')');
-     } catch (PDOException $e){
-        print "Error!" . $e ->getMessage(). "<br/>";die();
-?>	
 	
  <head>
  <style>
@@ -36,7 +26,17 @@ display:inline-block;
       </div>
     </div>
  <div class="nav createAcc">
-	<h1>Create Account</h1>
+<div class="container">
+        <ul>
+	      <li><a href="MyAccount.html">My Profile</a></li>
+              <li><a href="FindMatches.html">Find Matches</a></li>
+              <li><a href="Matches.html">My Matches</a></li>
+	      <li><a href="CreateAccount.html">Create Account</a></li>
+	      <li><a href="Login.html">Login</a></li>
+	      
+        </ul> 
+	
+      </div>
  </div class = "loginbtns>
     <tr id="main">
         <td id="border">&nbsp;</td>
@@ -71,3 +71,13 @@ display:inline-block;
 </table>
 </body>
 </html>
+
+<?php
+  try{
+	$config = parse_ini_file("db.ini");  
+	$dbh = new PDO($config['dsn'],$config['username'], $config['password']);  
+
+	$dbh->query('CALL createAccount('$_POST['email']', '$_POST['password']')');
+     } catch (PDOException $e){
+        print "Error!" . $e ->getMessage(). "<br/>";die();
+?>	

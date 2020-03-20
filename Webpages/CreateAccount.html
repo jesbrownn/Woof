@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
  
+<?php
+  try{
+	$config = parse_ini_file("db.ini");  
+	$dbh = new PDO($config['dsn'],$config['username'], $config['password']);  
+
+	$dbh->query('CALL createAccount('$_POST['email']', '$_POST['password']')');
+     } catch (PDOException $e){
+        print "Error!" . $e ->getMessage(). "<br/>";die();
+?>	
+	
  <head>
  <style>
 .match {

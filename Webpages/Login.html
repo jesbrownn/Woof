@@ -1,63 +1,54 @@
-<!Doctype html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="website.css">
-<style>
-</style>
-</head>
-<body>
-<table>
-    <tr id="top">
-        <td>&nbsp;</td>
-        <td colspan="2">&nbsp;</td>
-	<td coldspan="1", id="CrAct"><a href="CreateAccount.html"><h3 id="goldtxt">New Account</h3></a></td>
-	<td id="textcell"><a href="Login.html"><h3 id="goldtxt">Login</h3></a></td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr id="banner">
-        <td id="border">&nbsp;</td>
-        <th colspan="4", align="center">Banner</th>
-        <td id="border">&nbsp;</td>
-    </tr>
-    <tr id="buttons">
-        <td id="border">&nbsp;</td>
-        <td id="textcell"><a href="StartupHome.html"><h3 id="goldtxt">Home</h3></a></td>
-	<td id="textcell"><a href="Login.html"><h3 id="goldtxt">My Account</h3></a></td>
-        <td id="textcell"><a href="Login.html"><h3 id="goldtxt">Chat</h3></a></td>
-	<td id="textcell"><h3 id="goldtxt">Match</h3></td>
-        <td id="border">&nbsp;</td>
-    </tr>
-    <tr id="main">
-        <td id="border">&nbsp;</td>
-        <td colspan="4"> 
-	<form action="Home.html"><!--This should link to a javascript page that redirects this data to the database, then go home. -->
-	<p id="loginbtns">Login</p>
-		<p align="middle">
-	          <label>Text box</label>
-	          <input type = "text"
-                 id = "myText"
-                 value = "text here" />
-	        </p> 
-		<p id="loginbtns">
-          <label>Password</label>
-          <input type = "password"
-                  id = "myPwd"
-                  value = "secret" />
-        	</p>
-		<p id="loginbtns">
-		<input type="submit" value="Submit">
-		</p>
-		</form>
-	</td>
- </td>
-        <td id="border">&nbsp;</td>
-    </tr>
-    <tr id="bottombdr">
-        <td id="border">&nbsp;</td>
-        <td colspan="4", id="bottom">&nbsp;</td>
-        <td id="border">&nbsp;</td>
-    </tr>
-</table>
-</table>
-</body>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Woof!</title>
+    <link rel="stylesheet" href="login.css" type="text/css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <h1>Woof!</h1>
+        <div class="text-background">
+          <p>Find your perfect doggie playdate</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <div class="container">
+        <ul>
+              <li>
+                <a href = "https://mtu.instructure.com/">MTU Canvas</a>
+              </li>
+              <li>
+                <a href = "./Home.html">Home</a>
+              </li>              
+        </ul>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="container">
+        <form>
+          <label for="username">Username: </label> <! –– associate input with label for=id-- !>
+          <input type="text" id="username" name="username" pattern="[A-Za-z0-9.-_] minlength="6" maxlength="14" required="true">
+          <br>
+          <label for="user-pw">Password: </label>
+          <input type="password" id="user-pw" name="user-pw" pattern="[A-Za-z0-9.-_] minlength="6" maxlength="14" required="true">
+
+          <section class="validation"> 
+          <input type="submit" value = "Login">
+          </section>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p>Thanks for visiting our page!</p>
+      </div>
+    </div>
+  </body>
 </html>

@@ -71,13 +71,3 @@ display:inline-block;
 </table>
 </body>
 </html>
-
-<?php
-  try{
-	$config = parse_ini_file("db.ini");  
-	$dbh = new PDO($config['dsn'],$config['username'], $config['password']);  
-
-	$dbh->query('CALL createAccount('$_POST['email']', '$_POST['password']')');
-     } catch (PDOException $e){
-        print "Error!" . $e ->getMessage(). "<br/>";die();
-?>	

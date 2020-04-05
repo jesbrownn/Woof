@@ -1,0 +1,237 @@
+{
+  "id": "53f15ff0-ea5a-443d-a0d9-49abc78c9fa6",
+  "version": "2.0",
+  "name": "Woof",
+  "url": "https://walkerfanclub.000webhostapp.com",
+  "tests": [{
+    "id": "ab6cac99-fd16-476a-938a-301f3d7f1f02",
+    "name": "create account",
+    "commands": [{
+      "id": "15823515-931c-46fb-8bcf-0d056fc65de6",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "151c4bf2-d401-452a-a1d6-c81e1fcb0128",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "697x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "29f60c3d-922e-495a-a018-8ea9fffbf7f3",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=div:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f45a0f41-84ad-47c2-9c4a-dfcf17a00b8a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Create Account",
+      "targets": [
+        ["linkText=Create Account", "linkText"],
+        ["css=li > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Create Account')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'CreateAccount.html')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Create Account')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc42eae1-8ffd-4f63-b50d-db359a709260",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "629a9b85-5654-41e4-95cd-0757edf63dca",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a7cb410-73d3-4b37-af96-9d2242f23c66",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d149535-4d67-4327-adaf-990b4caf7f9b",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "asdf@gmail.com"
+    }, {
+      "id": "6483e52d-9437-480b-8169-eaaeac2bf2e8",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "160c1ebc-f5ea-4f6a-8ea8-8eb176695ad2",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "0dcb74e5-41e6-4087-af9f-100e7f5d6545",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "1392fa83-d48e-4f7f-8f57-f3d67de7eb76",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f681bcc6-ab57-4134-a09b-b223fd83fce4",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "banana@gmail.com"
+    }, {
+      "id": "2127c914-863a-4825-99a0-c22fe485c876",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1c2ea91-91d4-4629-907d-0cea357882e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf2eac70-9329-4595-b6f3-eb59014f08b6",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b2091fa-bebd-4650-9023-3683c57ff8d5",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "39af6b7f-9f58-49e9-aea1-4f1cdb4bffe4",
+      "comment": "",
+      "command": "click",
+      "target": "id=Submit",
+      "targets": [
+        ["id=Submit", "id"],
+        ["name=Submit", "name"],
+        ["css=#Submit", "css:finder"],
+        ["xpath=//input[@id='Submit']", "xpath:attributes"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4218d9b7-8163-4f64-a02a-b98275c29346",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://walkerfanclub.000webhostapp.com/"],
+  "plugins": []
+}

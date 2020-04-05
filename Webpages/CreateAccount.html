@@ -1,7 +1,13 @@
+<?php
+    session_set_cookie_params(0);
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	
  <head>
+
  <style>
 .match {
 border:1px solid black;
@@ -28,35 +34,28 @@ display:inline-block;
  <div class="nav createAcc">
 <div class="container">
         <ul>
-	      <li><a href="MyAccount.html">My Profile</a></li>
-              <li><a href="FindMatches.html">Find Matches</a></li>
-              <li><a href="Matches.html">My Matches</a></li>
-	      <li><a href="CreateAccount.html">Create Account</a></li>
-	      <li><a href="Login.html">Login</a></li>
+	      <li><a href="index.html">Login</a></li>
 	      
         </ul> 
 	
       </div>
- </div class = "loginbtns>
+ </div class = "loginbtns">
     <tr id="main">
         <td id="border">&nbsp;</td>
         <td colspan="4">
-		<form action="FindMatches.html"><!--This should link to a javascript page that redirects this data to the database, then go home. -->
+		<form method="post" action="createAccountConnect.php">
 
-							
 			<p class="loginbtns">
 		          <label>Email:  </label>
-		          <input type = "text"
-        	         id = "myText"/>
+		          <input type = "text" id = "email" name = "email"/>
 		        </p> 
 			<p class="loginbtns">
         	  <label>Password: </label>
-        	  <input type = "password"
-        	          id = "myPwd"/>
+        	  <input type = "password" id = "password" name = "password"/>
         		</p>
 			<p class="loginbtns">
 <!--This should include a javascript image reciever by file upload. -->
-			<input type="submit" value="Submit">
+			<input type="submit" value="Submit" name = "Submit" id = "Submit">
 			</p>
 		</form>		
 		</td>

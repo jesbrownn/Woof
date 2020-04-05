@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Woof!</title>
-    <link rel="stylesheet" href="login.css" type="text/css">
+    <link rel="stylesheet" href="index.css" type="text/css">
   </head>
   <body>
     <div class="header">
@@ -18,40 +18,33 @@
     <div class="nav">
       <div class="container">
         <ul>
-	      <li><a href="MyAccount.html">My Profile</a></li>
-              <li><a href="FindMatches.html">Find Matches</a></li>
-              <li><a href="Matches.html">My Matches</a></li>
-	      <li><a href="CreateAccount.html">Create Account</a></li>
-	      <li><a href="Login.html">Login</a></li>
-	      
+              <li><a href="findMatches.php">Find Matches</a></li>
+              <li><a href="matches.php">My Matches</a></li>
+	      <li><a href="logout.php">Logout</a></li>  
         </ul> 
-	
       </div>
     </div>
 
-<h1> My Profile </h1>
-
-  </div class = "loginbtns>
-    <tr id="main">
-        <td id="border">&nbsp;</td>
-        <td colspan="4">
-		<form action="FindMatches.html"><!--This should link to a javascript page that redirects this data to the database, then go home. -->
-
-							
+    <div id="main">
+      <h1> My Profile </h1>
+      <div class = "loginbtns">
+        <div id="border">&nbsp;</div>
+        <div colspan="4">
+		<form action="myAccount.php">
 			<p class="loginbtns">
 		          <label>First Name: </label>
 		          <input type = "text"
-        	         id = "FstName" />
+        	         id = "FstName" value = "name" />
 		        </p> 
 			<p class="loginbtns">
 		          <label>Last Name:</label>
 		          <input type = "text"
-        	         id = "LstName" />
+        	         id = "LstName" value = "last"/>
 		        </p> 
 			<p class="loginbtns">
 		          <label>Dog's Name:</label>
 		          <input type = "text"
-        	         id = "DogName" />
+        	         id = "DogName" name = "dogs name"/>
 		        </p> 
 			<p class="loginbtns">
 		          <label>Username:  </label>
@@ -63,20 +56,17 @@
         	  <input type = "password"
         	          id = "myPwd"/>
         		</p>
-			<p class="loginbtns">
-<!--This should include a javascript image reciever by file upload. -->
+			<p class="loginbtns">  <!--This should include a javascript image reciever by file upload. -->
 			<input type="submit" value="Update Profile" href = "FindMatches.html">
 			</p>
 		</form>		
-		</td>
-        <td id="border">&nbsp;</td>
-    </tr>
-    <tr id="bottombdr">
-        <td id="border">&nbsp;</td>
-        <td colspan="4", id="bottom">&nbsp;</td>
-        <td id="border">&nbsp;</td>
-    </tr>
-</table>
-</table>
-</body>
-</html>
+	</div>
+        <div id="border">&nbsp;</div>
+      </div>
+    </div>
+
+    <div id="bottombdr">
+        <div id="border">&nbsp;</div>
+        <div colspan="4" id="bottom">&nbsp;</div>
+        <div id="border">&nbsp;</div>
+    </div>

@@ -1,36 +1,49 @@
 <?php
-session_set_cookie_params(0);
-	session_start();
+//session_set_cookie_params(0);
+session_start();
+$servername = "localhost";
+$username = "---------------";
+$password = "---------------";
+$database = "---------------";
+try {   
+    $conn = new PDO("mysql:host=$servername;dbname=$database", $username,$password);
+    // set the PDO error mode to exception
+     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     //echo "Connected successfully"; 
+} catch(PDOException $e) {    
+    echo "Connection failed: " . $e->getMessage();
+}
+
+if(!($_SESSION["loggedin"])){ // log user out if the session indicates they arent logged in
+    header("location: index.php");
+}
+if (isset($_POST['right'])){
+    if ($_SESSION['noProfiles'] != 1){
+    $_POST['right'] = false;
+    $qry= "CALL swipe('$_SESSION[accNum]', '$_SESSION[matchNum]', 1);";
+    $stmt = $conn->prepare($qry);
+    $stmt->execute();
+    }
+    header("location: findMatches.php");
+}
+else if (isset($_POST['left'])){
+    if ($_SESSION['noProfiles'] != 1){
+    $_POST['left'] = false;
+    $qry= "CALL swipe('$_SESSION[accNum]', '$_SESSION[matchNum]', 0);";
+    $stmt = $conn->prepare($qry);
+    $stmt->execute();
+    }
+    header("location: findMatches.php");
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
  
  <head>
- <style>
-* {
-  box-sizing: border-box;
-}
-
-.column {
-  height:400px;
-  width:33.33%;
-  float:left;
-  padding: 1px;
-}
-
-
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
- </style>
     <meta charset="utf-8">
     <title>Woof!</title>
-    <link rel="stylesheet" href="template.css" type="text/css">
+    <link rel="stylesheet" href="FindMatches.css" type="text/css">
   </head>
   <body>
     <div class="header">
@@ -46,61 +59,68 @@ session_set_cookie_params(0);
       <div class="container">
         <ul>
 	      <li><a href="myAccount.php">My Profile</a></li>
-              <li><a href="findMatches.php">Find Matches</a></li>
               <li><a href="matches.php">My Matches</a></li>
 	      <li><a href="logout.php">Logout</a></li>
-	      
         </ul> 
-	
       </div>
     </div>
+    <div class = "container">
+        <h1>Find Matches</h1>
+    <div class="main containerA">  
+        <div class="swipe-left"> 
+        <form method="post">
+            <input type="hidden" name="left" value="left">
+            <input type="image" src="Leftpaw.png">
+        </form>
+        </div>
+        <div class"container" style="border:1px solid black;background-color: #F0FFFF;"> 
+            <div class = "poloroid" style="border:1px solid black;background-color: #F0FFFF;">
+              <div class = "pic">
+                <?php
+                $sql = "SELECT nextMatchF(".$_SESSION['accNum'].");";
+                $matchNum = ($conn->query($sql))->fetch();
+                if ($matchNum[0] != NULL){
+                    $_SESSION['matchNum'] = $matchNum[0];
+                    $sql = "SELECT picture FROM Accounts WHERE accountNum='$_SESSION[matchNum]';";
+                    $result = ($conn->query($sql));
+                
+                    while ($row = $result->fetch()){
+                        if(strlen($row[0]) > 0){
+                            echo '<img src="data:image;base64,'.$row["picture"].'"  width="500" height=auto>'; 
+                        } else {
+                            echo '<img src="no-image-available.png"  width="400" ">';
+                        }
+                
+                    }
+                } else {
+                    $_SESSION['noProfiles'] = 1;
+                    echo "<center>No more profiles to display!</center>";
+                }
+                echo "</div><div class = 'cont'>";
+                if ($matchNum[0] != NULL){
+                    $sql = "SELECT age, name, breed, bio FROM Accounts WHERE accountNum = '$_SESSION[matchNum]';";
+                    $result = $conn->query($sql);
 
-    <div class="main">
-      
-<div class="row"> 
-<div class="column" style="width:23.33%">
-	</div>
-<div class="column" style="width:10%">
-    <img src="Leftpaw.png" alt="Snow" style="width:100%; height:250px;">
-	</div> 
-  <div class="column" style="width:33.33%; border:1px solid black;">
-    <img src="puppy.jpg" alt="Forest" style="width:50%">
-      <?php
-$servername = "xx";
-$username = "xx";
-$password = "xx";
-$database = "xx";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo "Connected successfully"; 
-    } catch(PDOException $e) {    
-    echo "Connection failed: " . $e->getMessage();
-    }
-
-$sql = "SELECT age, name, breed, email FROM Accounts";
-$result = $conn->query($sql);
-
-    while($row = $result->fetch()) {
-        if($row[email] == $_SESSION[SEmail])
-            echo "age: " . $row["age"]. " - Name: " . $row["name"]. " Breed" . $row["breed"]. "<br>";
-    }
-
-?>
-
-  </div>
-  <div class="column" style="width:33.33%">
-    <img src="Rightpaw.png" alt="Mountains" style="width:30%; height:250px;">
-  </div>
-</div>
-
+                    while($row = $result->fetch()) {
+                      echo "<br>Name: ". $row["name"]."<br>Age: ". $row["age"]."<br>Breed:   ".$row["breed"]."<br>Bio:  <textarea readonly name='bio' rows='10' cols='65' maxlength='500' style='font-family:Roboto, sans-serif;font-size:14px;border: none;outline: none;resize:none'>".$row["bio"]."</textarea><br><br><br><br>";
+                    }
+                }
+                ?>
+                </div>
+            </div>
+        </div>
+        <div class="swipe-right"> 
+        <form method="post">
+            <input type="hidden" name="right" value="right">
+            <input type="image" src="Rightpaw.png">
+        </form>
+        </div>
+    </div>
     </div>
 
+    </div>
     <div class="footer">
       <div class="container">
-        <p>Thanks for visiting our page!</p>
       </div>
     </div>
   </body>

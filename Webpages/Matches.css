@@ -118,15 +118,19 @@ body {
   background: #000;
   height: 80px; 
   padding-bottom: 50px;
+  text-align: center;
 }
 
-.footer p { 
+
+
+/*.footer p { 
   color: #fff;
   font-size: 14px;  
   height: 80px; 
   line-height: 80px;
   margin: 0;  
-}
+}*/
+
 a:link{
     text-decoration:none;
     color:white;

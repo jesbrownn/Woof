@@ -2,9 +2,9 @@
 session_set_cookie_params(0);
 session_start();
 $servername = "localhost";
-$username = "id13126433_walkerfanclub";
-$password = "DrJamesWalker#1";
-$database = "id13126433_tspwoof";
+$username = "-----------------";
+$password = "-----------------";
+$database = "-----------------";
 
 
 

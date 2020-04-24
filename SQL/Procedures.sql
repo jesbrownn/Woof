@@ -15,7 +15,7 @@ END//
 
 CREATE PROCEDURE getProfile(IN acNum int, OUT oname varchar(40), OUT obreed varchar(40), OUT obio varchar(500), OUT oage int, OUT opicture blob)
 BEGIN
-	SELECT name, breed, bio, age, picture INTO oname, obreed, obio, oage, opicture
+    SELECT name, breed, bio, age, picture INTO oname, obreed, obio, oage, opicture
     FROM Accounts
     WHERE accountNum = acNum;
 END//
@@ -23,7 +23,7 @@ END//
 CREATE PROCEDURE createAccount(IN tok char(255), IN email varchar(40), IN password char(255))
 BEGIN
 	INSERT IGNORE INTO Accounts (token, email, pass)
-	value (tok, email, password);
+	value (tok, email, PASSWORD(password));
 END//
 
 CREATE PROCEDURE modifyProfile(IN acNum int, IN name varchar(40), IN breed varchar(40), IN bio varchar(500), IN age int, IN picture blob)
@@ -72,7 +72,7 @@ END//
 
 CREATE PROCEDURE getMatches(IN acc int)
 BEGIN
-	SELECT *
+    SELECT picture, name, email, breed
     FROM Matches
     WHERE acc1=acc OR acc2=acc;
 END//
